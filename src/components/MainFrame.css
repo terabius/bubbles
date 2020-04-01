@@ -1,0 +1,12 @@
+.mainframe{
+    background-color: gray;
+    width: 80vw;
+    height: 100vh;
+    padding:20px;
+}
+
+
+canvas.dots {
+    width: 400px;
+    height: 400px;
+}

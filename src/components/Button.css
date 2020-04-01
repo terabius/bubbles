@@ -1,0 +1,9 @@
+
+.btn{
+    display: inline-block;
+    margin: 0 10px;
+    border: 1px solid lightblue;
+    background-color: blue;
+    color: white;
+    padding:20px 20px;
+}

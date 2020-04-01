@@ -29,7 +29,7 @@ export default class SideBar extends React.Component {
             <div className='sidebar'>
 
                 <div>
-                <h3>Number:</h3>
+                <h3>Number:{this.state.num}</h3>
                 1
                 <input type='range' name='num' min={this.state.nmin} max={this.state.nmax} value={this.state.nvalue}
                  onChange={this.handleChange}/>
@@ -37,7 +37,7 @@ export default class SideBar extends React.Component {
                 </div>
 
                 <div>
-                <h3>Ratio:</h3>
+                <h3>Ratio:{this.state.ratio}</h3>
                 1
                 <input type='range' name='ratio' min={this.state.rmin} max={this.state.rmax} value={this.state.rvalue}
                  onChange={this.handleChange}/>

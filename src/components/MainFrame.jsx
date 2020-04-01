@@ -6,53 +6,37 @@ export default class MainFrame extends Component {
 
     componentDidMount(){
         const canvas = document.getElementById('canva');
-        // console.log(cv);
         const context = canvas.getContext('2d');
 
         canvas.width = 400;
         canvas.height = 400;
 
-        var dotMargin = 25;
-        var numRows = 5;
-        var numCols = 10;
         // Set the colors you want to support in this array
-        var colors = ['#FF4C4C', '#4CA64C'];
-        var directions = ['+', '-'];
-        var speeds = [0.5, 1, 1.5, 2, 2.5, 3, 3.5];
+        const colors = ['#FF4C4C', '#4CA64C'];
+        const directions = ['+', '-'];
+        const speeds = [0.5, 1, 1.5, 2, 2.5, 3, 3.5];
 
-        var canvasWidth = 400;
-        var canvasHeight = 400; // this one is new
-        // canvas.attr({ height: canvasHeight, width: canvasWidth });
+        const canvasWidth = 400;
+        const canvasHeight = 400; 
 
-        var dotWidth = ((canvasWidth - (2 * dotMargin)) / numCols) - dotMargin;
-        var dotHeight = ((canvasHeight - (2 * dotMargin)) / numRows) - dotMargin;
-
-        if (dotWidth > dotHeight) {
-            var dotDiameter = dotHeight;
-            var xMargin = (canvasWidth - ((2 * dotMargin) + (numCols * dotDiameter))) / numCols;
-            var yMargin = dotMargin;
-        } else {
-            var dotDiameter = dotWidth;
-            var xMargin = dotMargin;
-            var yMargin = (canvasHeight - ((2 * dotMargin) + (numRows * dotDiameter))) / numRows;
-        }
 
         // Start with an empty array of dots.
-        var dots = [];
+        const dots = [];
 
-        var dotRadius = dotDiameter * 0.5;
+        const dotRadius = 5;
 
-        for (var i = 0; i < numRows; i++) {
-            for (var j = 0; j < numCols; j++) {
-                var x = (j * (dotDiameter + xMargin)) + dotMargin + (xMargin / 2) + dotRadius;
-                var y = (i * (dotDiameter + yMargin)) + dotMargin + (yMargin / 2) + dotRadius;
+        for (var i = 0; i < 5; i++) {
+            for (var j = 0; j < 10; j++) {
+
+                const x = (dotRadius*j)
+                const y = (dotRadius*i)
                 // Get random color, direction and speed.
-                var color = colors[Math.floor(Math.random() * colors.length)];
-                var xMove = directions[Math.floor(Math.random() * directions.length)];
-                var yMove = directions[Math.floor(Math.random() * directions.length)];
-                var speed = speeds[Math.floor(Math.random() * speeds.length)];
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const xMove = directions[Math.floor(Math.random() * directions.length)];
+                const yMove = directions[Math.floor(Math.random() * directions.length)];
+                const speed = speeds[Math.floor(Math.random() * speeds.length)];
                 // Set the object.
-                var dot = {
+                const dot = {
                     x: x,
                     y: y,
                     radius: dotRadius,
@@ -120,17 +104,6 @@ export default class MainFrame extends Component {
             context.fillStyle = dot.color;
             context.fill();
         }
-
-
-
-
-
-
-
-
-
-
-
 
     }
 

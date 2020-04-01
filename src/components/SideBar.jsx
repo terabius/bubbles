@@ -1,8 +1,7 @@
 import React from 'react'
 
 import './SideBar.css'
-
-import Button from './Button'
+import './Button.css'
 
 export default class SideBar extends React.Component {
 
@@ -18,10 +17,16 @@ export default class SideBar extends React.Component {
         };
 
         this.handleChange = this.handleChange.bind(this);
+        this.dataToParent = this.dataToParent.bind(this);
     }
 
     handleChange(event){        
         this.setState({[event.target.name]: event.target.value})
+
+    }
+
+    dataToParent(){
+        this.props.sendData({ num: this.state.num, ratio: this.state.ratio })
     }
 
     render(){
@@ -37,7 +42,7 @@ export default class SideBar extends React.Component {
                 </div>
 
                 <div>
-                <h3>Ratio:{this.state.ratio}</h3>
+        <h3>Ratio:{this.state.ratio}</h3>
                 1
                 <input type='range' name='ratio' min={this.state.rmin} max={this.state.rmax} value={this.state.rvalue}
                  onChange={this.handleChange}/>
@@ -45,8 +50,8 @@ export default class SideBar extends React.Component {
                 </div>
 
                 <div>
-                    <Button msg='Start' />
-                    <Button msg='Stop' />
+                    <button className='btn' onClick={this.dataToParent}>Start</button>
+                    <button className='btn'>Stop</button>
                 </div>
             </div>
         )

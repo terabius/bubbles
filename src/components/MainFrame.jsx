@@ -4,6 +4,11 @@ import './MainFrame.css'
 
 export default class MainFrame extends Component {
 
+    constructor(props){
+        super(props);
+
+    }
+
     componentDidMount(){
         const canvas = document.getElementById('canva');
         const context = canvas.getContext('2d');

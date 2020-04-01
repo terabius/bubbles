@@ -16,7 +16,7 @@ export default class MainFrame extends Component {
         var numRows = 5;
         var numCols = 10;
         // Set the colors you want to support in this array
-        var colors = ['#F03C69', '#FFCD32', '#2BAD5D', '#2ABABF', '#CDDC28', '#B91E8C'];
+        var colors = ['#FF4C4C', '#4CA64C'];
         var directions = ['+', '-'];
         var speeds = [0.5, 1, 1.5, 2, 2.5, 3, 3.5];
 

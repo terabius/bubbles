@@ -62,6 +62,22 @@ export default class MainFrame extends Component {
             ctx.fill();
         }
 
+        function moveDot(dots){
+            ctx.clearRect(0, 0, 400, 400);
+            const move = [-1,0,1];
+
+            for(let dot of dots){
+                if(dot.x<4 || dot.x>396 || dot.y<4 || dot.y >396){
+                    dot.x=dot.x
+                }else{
+                    dot.x += move[getRandom(0, 3)];
+                    dot.y += move[getRandom(0, 3)]; 
+                }
+                drawDot(dot);
+            }
+        }
+
+        // setInterval(()=>moveDot(dots),1000);
 
     }
 

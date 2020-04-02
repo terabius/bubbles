@@ -20,15 +20,19 @@ export default class App extends Component {
 
 
   sendData(data) {
-    this.setState({num: data.num, ratio:data.ratio })
+    const n = parseInt(data.num);
+    const r = parseInt(data.ratio)
+    console.log(n,r);
+    
+    this.setState({num: n, ratio: r })
   }
 
   render() {
     return (
       <div className='app'>
         
-        <SideBar sendData={this.sendData}/>
-        <MainFrame />
+        <SideBar sendData={this.sendData} />
+        <MainFrame num={this.state.num} ratio={this.state.ratio}/>
       </div>
     )
   }
